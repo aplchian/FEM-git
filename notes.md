@@ -207,9 +207,11 @@ git revert [hash]
 **if you want to revert a revert... its not going to work.. the best option is to cherry pick your changes**
 
 
+### Adding back a file you deleted
 
-
-
-
-
-
+```
+git --no-pager log --diff-filter=D --oneline -- hello.template
+==> 40c24de (HEAD -> master) deleted template file
+git checkout 40c24de^ -- hello.template
+==> checks out the commit before it was deleted and adds it back!
+```
