@@ -215,3 +215,52 @@ git --no-pager log --diff-filter=D --oneline -- hello.template
 git checkout 40c24de^ -- hello.template
 ==> checks out the commit before it was deleted and adds it back!
 ```
+
+
+## Git Rebase, Amend
+
+Rewrite History!
+
+### Amend a Commit
+
+Amend is a quick and easy shortcut that lets you make changes to the previous commit
+
+so if you made a commit, but maybe forgot to add a change to it..
+
+```
+git commit ammend
+```
+
+
+### Git Rebase
+
+What is rebase?
+
+Imagine our tech_posts and master branch have diverged.
+
+We dont want a messy merge commit in our history
+
+We can pull in all the latest changes from master, and apply our commits on top of them by changing the parent commit of our commits
+
+so, we want to apply all of our commits cleanly on top.. not a bunch of commits mixed in with master.. we can do that by changed the parent commit of our commit
+
+Rebase = give a commit a new parent (i.e. a new "base" commit)
+
+Rebase : Rewinding Head
+
+```
+git checkout tech_posts
+
+git rebase master
+```
+
+Power of Rebasing - Replaying Commits
+
+Commits can be:
+- edited
+- removed
+- combined
+- re-ordered
+- inserted
+
+- before they're 'replayed on top of the new HEAD'
