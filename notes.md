@@ -194,6 +194,19 @@ git reset <commit> -- <file>
 
 
 
+## Git Revert
+
+this is a safe reset..  reseting code you shared, on public repos, etc. The original commit stays in the repo
+
+git creates a commit that is the mirror opposite of the one you specified
+
+```
+git revert [hash]
+```
+
+**if you want to revert a revert... its not going to work.. the best option is to cherry pick your changes**
+
+
 
 
 
